@@ -29,9 +29,13 @@ Using HTML and CSS, create two columns in the web page. Using the DOM to create 
 In the left column:
 
 * Create a list of passenger names
+* Style the list to look presentable
 
 In the right column:
 
 * Passenger details
+* Style the list to look presentable
+
+### Step 5
 
 When a user clicks one of the passengers in the left column, their details will appear on the right column
