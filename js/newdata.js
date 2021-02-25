@@ -20,7 +20,7 @@ let passengerManifest = [];
 
 const titanicObjects = function(arrToObject) {
     let obj;
-    for (let i = arrToObject.length -1; i >= 0; i--) {
+    for (let i = 0; i < arrToObject.length; i++) {
         obj = new TitanicData(arrToObject[i][0], 
             arrToObject[i][1],
             arrToObject[i][2],
@@ -31,7 +31,6 @@ const titanicObjects = function(arrToObject) {
             arrToObject[i][7])
         passengerManifest.push(obj)
     }
-    return obj;
 }
 
 class TitanicData {
@@ -47,7 +46,8 @@ class TitanicData {
     }
 }
 
-console.log(titanicObjects(parseData));
+titanicObjects(parseData)
+console.log(passengerManifest);
 
 
 
