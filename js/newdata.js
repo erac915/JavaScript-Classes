@@ -1,31 +1,34 @@
 
+// create array
 
 function splitString(stringToSplit, separator) {
     const arrayOfStrings = stringToSplit.split(separator);
-    console.log(arrayOfStrings)
     return arrayOfStrings;
 }
 
+//// call split string function 
 splitString(titanicStr , "\n")
 
+const titanticObject = Object.assign({}, titanicStr)
+console.log(titanicStr)
 
-// create class
+
+// create class w objects
 
 class TitanicData {
 
-    constructor(survived, pclass, name, sex, age, siblings, spouses, parents, children, fare){
+    constructor(survived, pclass, name, sex, age, sibspouses, parentschildren, fare){
         this.survived = survived,
         this.pclass = pclass,
         this.name = name,
         this.sex = sex,
         this.age = age,
-        this.siblings = siblings,
-        this.spouses = spouses,
-        this.parents = parents,
-        this.children = children,
+        this.sibspouses = sibspouses,
+        this.parentschildren = parentschildren,
         this.fare = fare
     }
-
 }
+
+
 
 
