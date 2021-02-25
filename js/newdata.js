@@ -1,22 +1,40 @@
 
-// create array
-
-function splitString(stringToSplit, separator) {
+// create array and split array into strings
+const splitString = function(stringToSplit, separator) {
     const arrayOfStrings = stringToSplit.split(separator);
     return arrayOfStrings;
 }
+let parseData = splitPassengerData(splitString(titanicStr, '\n')); 
 
-//// call split string function 
-splitString(titanicStr , "\n")
+// turn strings into their own array nested in an array
+function splitPassengerData(passengers) {
+    for (let i = 0; i < passengers.length; i++) {
+        passengers[i] = splitString(passengers[i], ',')
+    }
+    return passengers
+}
 
-const titanticObject = Object.assign({}, titanicStr)
-console.log(titanicStr)
 
+//Turn nested arrays into objects.
+let passengerManifest = [];
 
-// create class w objects
+const titanicObjects = function(arrToObject) {
+    let obj;
+    for (let i = arrToObject.length -1; i >= 0; i--) {
+        obj = new TitanicData(arrToObject[i][0], 
+            arrToObject[i][1],
+            arrToObject[i][2],
+            arrToObject[i][3],
+            arrToObject[i][4],
+            arrToObject[i][5],
+            arrToObject[i][6],
+            arrToObject[i][7])
+        passengerManifest.push(obj)
+    }
+    return obj;
+}
 
 class TitanicData {
-
     constructor(survived, pclass, name, sex, age, sibspouses, parentschildren, fare){
         this.survived = survived,
         this.pclass = pclass,
@@ -28,6 +46,8 @@ class TitanicData {
         this.fare = fare
     }
 }
+
+console.log(titanicObjects(parseData));
 
 
 
