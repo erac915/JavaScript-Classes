@@ -55,4 +55,13 @@ console.log(passengerManifest);
 
 
 
+let gridItem1 = document.querySelector(".name")
+let loopThruManifest = function (arr){
+
+    for(let i=0; i<arr.length; i++) {
+        arr[i] = document.createElement("li")
+    }
+}
+
+
 
