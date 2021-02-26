@@ -4,7 +4,12 @@ const splitString = function(stringToSplit, separator) {
     const arrayOfStrings = stringToSplit.split(separator);
     return arrayOfStrings;
 }
-let parseData = splitPassengerData(splitString(titanicStr, '\n')); 
+
+// break one string into an array of strings
+let stringToArray = splitString(titanicStr, '\n')
+
+// break individual passengers into array of passenger data
+let parseData = splitPassengerData(stringToArray); 
 
 // turn strings into their own array nested in an array
 function splitPassengerData(passengers) {
@@ -14,10 +19,9 @@ function splitPassengerData(passengers) {
     return passengers
 }
 
-
 //Turn nested arrays into objects.
 let passengerManifest = [];
-
+// convert nested arrays into objects to be used in class template
 const titanicObjects = function(arrToObject) {
     let obj;
     for (let i = 0; i < arrToObject.length; i++) {
@@ -32,7 +36,7 @@ const titanicObjects = function(arrToObject) {
         passengerManifest.push(obj)
     }
 }
-
+//create class template to pass ojects into
 class TitanicData {
     constructor(survived, pclass, name, sex, age, sibspouses, parentschildren, fare){
         this.survived = survived,
